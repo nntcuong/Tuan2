@@ -1,5 +1,4 @@
-// LoginComponent.js
-
+//Nguyễn Ngô Thế Cường : 21521905
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -40,6 +39,7 @@ const RegisterComponent = ({ handleLogin, navigation }) => {
           onChangeText={setEmail}
         />
       </View>
+      {/* //Nguyễn Ngô Thế Cường : 21521905 */}
       <View style={styles.containerTextInput}>
         <Image style={styles.imageTextInput}
           source={{ uri: 'https://tse1.mm.bing.net/th?id=OIP.PO4tSlis-6R6EjopPKu0xQHaEH&pid=Api&P=0&h=220' }}>
@@ -65,20 +65,20 @@ const RegisterComponent = ({ handleLogin, navigation }) => {
         />
       </View>
      
-      <TouchableOpacity style={styles.button} onPress={() => handleLogin(email, password)} >
+      <TouchableOpacity style={styles.button}  >
         <Text style={styles.textLogin}>CREATE</Text>
       </TouchableOpacity>
       
       <View style={styles.signUpContainer}>
         <Text>Already have an account? </Text>
-        <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+        <TouchableOpacity onPress={() => navigation.navigate('LoginComponent')}>
           <Text style={styles.signUpText}>Login now !</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 };
-
+//Nguyễn Ngô Thế Cường : 21521905
 const styles = StyleSheet.create({
 
   container: {
@@ -118,6 +118,7 @@ const styles = StyleSheet.create({
     color: '#FF1493',
 
   },
+  //Nguyễn Ngô Thế Cường : 21521905
   button: {
     backgroundColor: '#FF8C00',
 
@@ -155,6 +156,7 @@ const styles = StyleSheet.create({
   signUpText: {
     color: 'blue',
   },
+  //Nguyễn Ngô Thế Cường : 21521905
   forgotContainer: {
     alignItems: 'flex-end',
     marginRight: 25,

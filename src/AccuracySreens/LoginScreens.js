@@ -1,13 +1,24 @@
-// LoginComponent.js
-
-import React from 'react';
+//Nguyễn Ngô Thế Cường : 21521905
+import React,{ useContext, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { AuthContext } from './AuthContext';
 import { View, Text, TextInput, Button, Image, StyleSheet, TouchableOpacity } from 'react-native';
-const LoginComponent = ({ handleLogin, navigation }) => {
+const LoginComponent = ({  navigation }) => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const  {signIn}  = useContext(AuthContext);
+  const [error, setError] = React.useState('');
 
+  const handleLogin = () => {
+    if (email === '21521905@gm.uit.edu.vn' && password === 'nguyenngothecuong') {
+      signIn(email, password); 
+      navigation.navigate('Main'); 
+    }  else {
+      alert('Incorrect email or password');
+    }
+  };
+  //Nguyễn Ngô Thế Cường : 21521905
   return (
     <View >
       <Image
@@ -42,11 +53,11 @@ const LoginComponent = ({ handleLogin, navigation }) => {
       <View style={styles.forgotContainer}>
         <Text style={styles.Forgot}>Forgot password?</Text>
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => handleLogin(email, password)} >
+      <TouchableOpacity style={styles.button} onPress={handleLogin} >
         <Text style={styles.textLogin}>LOG IN</Text>
       </TouchableOpacity>
       <Text style={styles.text}> Or login with</Text>
-
+      {/* //Nguyễn Ngô Thế Cường : 21521905 */}
       <View style={styles.imageContainer}>
         <Image
           style={styles.imageStyle2}
@@ -88,6 +99,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
   },
+  //Nguyễn Ngô Thế Cường : 21521905
   textInput: {
     height: 50,
     width: 300,
@@ -122,6 +134,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
 
   },
+  //Nguyễn Ngô Thế Cường : 21521905
   imageContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -159,6 +172,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: 'black',
   },
+  //Nguyễn Ngô Thế Cường : 21521905
   iconContainer: {
     padding: 10,
   },
